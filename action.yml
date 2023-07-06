@@ -1,0 +1,16 @@
+name: 'Install WP-CLI'
+description: 'Install WP-CLI for WordPress on GitHub Actions.'
+author: 'Goto Hayato'
+runs:
+  using: 'composite'
+  steps:
+    - name: Install WP-CLI
+      run: |
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        mv wp-cli.phar /usr/local/bin/wp
+      shell: bash
+
+branding:
+  icon: 'download'
+  color: 'white'
